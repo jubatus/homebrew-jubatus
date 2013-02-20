@@ -5,6 +5,7 @@ class JubatusMpio < Formula
   head 'https://github.com/jubatus/jubatus-mpio.git'
   homepage 'https://github.com/jubatus/jubatus-mpio'
   md5 'd9479520de73375fa076f738bd896c45'
+  version '0.4.1'
 
   depends_on 'libtool'
   depends_on 'automake'

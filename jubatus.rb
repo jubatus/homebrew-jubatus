@@ -34,7 +34,7 @@ class Jubatus < Formula
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
   md5 'ffeef232b84615fc6b74ac50566e21e4'
-  version '0.4.0'
+  version '0.4.1'
 
   option 'enable-zookeeper', 'Using zookeeper for distributed environemnt'
   option 'enable-mecab', 'Using mecab for Japanese NLP'

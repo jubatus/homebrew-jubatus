@@ -5,6 +5,7 @@ class JubatusMsgpackRpc < Formula
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
   homepage 'http://pfi.github.com/pficommon/'
   md5 'c0adee3737cdc781da188f8700e5810f'
+  version '0.4.0-p1'
 
   depends_on 'msgpack'
   depends_on 'jubatus-mpio'
