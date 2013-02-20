@@ -4,9 +4,9 @@ A repository for Jubatus brews.
 
 ## How to use
 
-$ brew tap ogawa/jubatus
-$ brew install --HEAD pficommon
-$ brew install jubatus
+	$ brew tap ogawa/jubatus
+	$ brew install --HEAD pficommon
+	$ brew install jubatus
 
 ## Acknowledgment
 
