@@ -1,7 +1,8 @@
 require 'formula'
 
-class ZooKeeperLib < Requirement
+class ZooKeeperRequirement < Requirement
   def initialize
+    super
     @zk = Formula.factory('zookeeper')
   end
 
@@ -45,7 +46,7 @@ class Jubatus < Formula
   depends_on 'pficommon'
   depends_on 'jubatus-msgpack-rpc'
 
-  depends_on ZooKeeperLib.new if build.include? 'enable-zookeeper'
+  depends_on ZooKeeperRequirement.new if build.include? 'enable-zookeeper'
   depends_on 'mecab' if build.include? 'enable-mecab'
   depends_on 're2' if build.include? 'enable-re2'
   # snow leopard default gcc version is 4.2
