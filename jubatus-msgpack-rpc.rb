@@ -4,7 +4,7 @@ class JubatusMsgpackRpc < Formula
   url 'https://github.com/jubatus/jubatus-msgpack-rpc/tarball/0.4.1'
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
   homepage 'http://github.com/jubatus/jubatus-msgpack-rpc/'
-  md5 '3db938a380072aef817b725192ba9b43'
+  sha1 '87846ae055316fce819361c6fc64e42b621c1d62'
   version '0.4.1'
 
   depends_on 'msgpack'
