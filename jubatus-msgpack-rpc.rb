@@ -1,24 +1,20 @@
 require 'formula'
 
 class JubatusMsgpackRpc < Formula
-  url 'https://github.com/jubatus/jubatus-msgpack-rpc/tarball/0.4.1'
+  url 'http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.2.tar.gz'
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
   homepage 'http://github.com/jubatus/jubatus-msgpack-rpc/'
-  sha1 '87846ae055316fce819361c6fc64e42b621c1d62'
-  version '0.4.1'
+  sha1 'd24d43678c5d468ebad0dbb229df1c30a9de229e'
+  version '0.4.2'
 
   depends_on 'msgpack'
   depends_on 'jubatus-mpio'
   depends_on 'libtool'
-  depends_on 'automake'
 
   def install
-    cd "cpp" do
-      system "./bootstrap"
-      system "./configure", "--prefix=#{prefix}"
-      system "make"
-      system "make", "install"
-    end
+    system "./configure", "--prefix=#{prefix}"
+    system "make"
+    system "make", "install"
   end
 
   def test
