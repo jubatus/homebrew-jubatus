@@ -47,8 +47,8 @@ class Jubatus < Formula
   depends_on 'jubatus-msgpack-rpc'
 
   depends_on ZooKeeperRequirement.new if build.include? 'enable-zookeeper'
-  depends_on 'mecab' if build.include? 'enable-mecab'
-  depends_on 're2' if build.include? 'enable-re2'
+  depends_on 'mecab' if build.include? "enable-mecab"
+  depends_on 're2' unless build.include? "disable-re2"
   # snow leopard default gcc version is 4.2
   depends_on 'gcc' if build.include? 'snow-leopard'
 
@@ -68,7 +68,7 @@ class Jubatus < Formula
     STDERR.puts ENV['CC'], ENV['CXX']
     args = []
     args << "--prefix=#{prefix}"
-    args << "--disable-re2" unless build.include? "enable-re2"
+    args << "--disable-re2" if build.include? "disable-re2"
     args << "--enable-mecab" if build.include? "enable-mecab"
     args << "--enable-zookeeper" if build.include? "enable-zookeeper"
     system "./waf", "configure", *args
