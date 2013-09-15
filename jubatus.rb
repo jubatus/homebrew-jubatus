@@ -37,9 +37,9 @@ class Jubatus < Formula
   sha1 '104daca02a1f31f0e29ebbd8f45c7ed4200baaad'
   version '0.4.5'
 
-  option 'enable-zookeeper', 'Using zookeeper for distributed environemnt'
+  option 'disable-re2', 'Stop using re2 for regx'
   option 'enable-mecab', 'Using mecab for Japanese NLP'
-  option 'enable-re2', 'Using re2 for regx'
+  option 'enable-zookeeper', 'Using zookeeper for distributed environemnt'
 
   depends_on 'glog'
   depends_on 'pkg-config'
