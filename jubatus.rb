@@ -53,6 +53,14 @@ class Jubatus < Formula
   depends_on 'gcc' if build.include? 'snow-leopard'
 
   def install
+    # does not support Mavenricks                                                                                                                                
+    if MacOS.version >= "10.9"
+      <<-EOS.undent
+        Jubatus currently does not support Mavericks or later version
+      EOS
+      system "Jubatus currently does not support Mavericks or later version"
+      onoe "Error! Jubatus currently does not support Mavericks or later version"
+    end
     if ENV.compiler == :gcc
       gcc = Formula.factory('gcc')
       version = '4.7'
