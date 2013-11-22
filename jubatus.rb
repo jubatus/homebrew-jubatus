@@ -31,11 +31,12 @@ class ZooKeeperRequirement < Requirement
 end
 
 class Jubatus < Formula
-  url 'https://github.com/jubatus/jubatus/tarball/0.4.5'
+  # url 'https://github.com/jubatus/jubatus/tarball/0.5.0'
+  url 'https://github.com/hido/jubatus/tarball/fix_macosx_error'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  sha1 '104daca02a1f31f0e29ebbd8f45c7ed4200baaad'
-  version '0.4.5'
+  sha1 'ae06f9b0a6dc39c6b37f9de1bb74ea874d231a25'
+  version '0.5.0'
 
   option 'enable-zookeeper', 'Using zookeeper for distributed environemnt'
   option 'enable-mecab', 'Using mecab for Japanese NLP'
@@ -43,7 +44,6 @@ class Jubatus < Formula
 
   depends_on 'glog'
   depends_on 'pkg-config'
-  depends_on 'pficommon'
   depends_on 'jubatus-msgpack-rpc'
 
   depends_on ZooKeeperRequirement.new if build.include? 'enable-zookeeper'
