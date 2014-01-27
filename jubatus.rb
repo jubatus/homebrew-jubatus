@@ -32,15 +32,14 @@ end
 
 class Jubatus < Formula
   # url 'https://github.com/jubatus/jubatus/tarball/0.5.0'
-  url 'https://github.com/hido/jubatus/tarball/fix_macosx_error'
-  head 'https://github.com/jubatus/jubatus.git'
+  head 'https://github.com/jubatus/jubatus.git', :revision => '21ce129c1259a8070262bfdaf0a3002ea0b6eba2'
   homepage 'http://jubat.us/'
-  sha1 'ae06f9b0a6dc39c6b37f9de1bb74ea874d231a25'
+  # sha1 'ae06f9b0a6dc39c6b37f9de1bb74ea874d231a25'
   version '0.5.0'
 
-  option 'disable-re2', 'Stop using re2 for regx'
-  option 'enable-mecab', 'Using mecab for Japanese NLP'
-  option 'enable-zookeeper', 'Using zookeeper for distributed environemnt'
+  option 'disable-onig', 'Disable oniguruma for regex'
+  option 'enable-mecab', 'Enable mecab for Japanese NLP'
+  option 'enable-zookeeper', 'Enable ZooDeeper for distributed environemnt'
 
   depends_on 'glog'
   depends_on 'pkg-config'
@@ -48,18 +47,14 @@ class Jubatus < Formula
 
   depends_on ZooKeeperRequirement.new if build.include? 'enable-zookeeper'
   depends_on 'mecab' if build.include? "enable-mecab"
-  depends_on 're2' unless build.include? "disable-re2"
+  depends_on 'oniguruma' unless build.include? "disable-onig"
   # snow leopard default gcc version is 4.2
   depends_on 'gcc' if build.include? 'snow-leopard'
 
   def install
-    # does not support Mavenricks                                                                                                                                
+    # Mavericks is not supported
     if MacOS.version >= "10.9"
-      <<-EOS.undent
-        Jubatus currently does not support Mavericks or later version
-      EOS
-      system "Jubatus currently does not support Mavericks or later version"
-      onoe "Error! Jubatus currently does not support Mavericks or later version"
+      system "Error - Jubatus does not support Mavericks (OSX 10.9) or later version"
     end
     if ENV.compiler == :gcc
       gcc = Formula.factory('gcc')
@@ -76,7 +71,7 @@ class Jubatus < Formula
     STDERR.puts ENV['CC'], ENV['CXX']
     args = []
     args << "--prefix=#{prefix}"
-    args << "--disable-re2" if build.include? "disable-re2"
+    args << "--disable-onig" if build.include? "disable-onig"
     args << "--enable-mecab" if build.include? "enable-mecab"
     args << "--enable-zookeeper" if build.include? "enable-zookeeper"
     system "./waf", "configure", *args
