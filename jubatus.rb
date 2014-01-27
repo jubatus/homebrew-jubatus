@@ -31,11 +31,11 @@ class ZooKeeperRequirement < Requirement
 end
 
 class Jubatus < Formula
-  # url 'https://github.com/jubatus/jubatus/tarball/0.5.0'
-  head 'https://github.com/jubatus/jubatus.git', :revision => '21ce129c1259a8070262bfdaf0a3002ea0b6eba2'
+  url 'https://github.com/jubatus/jubatus/tarball/0.5.1'
+  head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  # sha1 'ae06f9b0a6dc39c6b37f9de1bb74ea874d231a25'
-  version '0.5.0'
+  sha1 '25108d2d3659865865b5c4d150c3755deed42d08'
+  version '0.5.1'
 
   option 'disable-onig', 'Disable oniguruma for regex'
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
