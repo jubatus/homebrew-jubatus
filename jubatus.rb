@@ -31,6 +31,13 @@ class ZooKeeperRequirement < Requirement
 end
 
 class Jubatus < Formula
+
+  # Mavericks is not supported
+  if MacOS.version >= "10.9"
+    onoe "Jubatus does not support Mavericks OSX 10.9 or later version"
+    exit 1
+  end
+
   url 'https://github.com/jubatus/jubatus/tarball/0.5.1'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
@@ -52,10 +59,6 @@ class Jubatus < Formula
   depends_on 'gcc' if build.include? 'snow-leopard'
 
   def install
-    # Mavericks is not supported
-    if MacOS.version >= "10.9"
-      system "Error - Jubatus does not support Mavericks (OSX 10.9) or later version"
-    end
     if ENV.compiler == :gcc
       gcc = Formula.factory('gcc')
       version = '4.7'
