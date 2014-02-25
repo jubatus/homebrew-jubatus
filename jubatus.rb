@@ -38,11 +38,11 @@ class Jubatus < Formula
     exit 1
   end
 
-  url 'https://github.com/jubatus/jubatus/tarball/0.5.1'
+  url 'https://github.com/jubatus/jubatus/tarball/0.5.2'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  sha1 '25108d2d3659865865b5c4d150c3755deed42d08'
-  version '0.5.1'
+  sha1 'ca62ac911cb54c6daff1e56637eabbbd83bb3e5a'
+  version '0.5.2'
 
   option 'disable-onig', 'Disable oniguruma for regex'
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
