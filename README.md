@@ -18,11 +18,11 @@ The following options are available:
 
 Example:
 
-    $ brew install --HEAD jubatus --use-clang --disable-onig --enable-zookeeper
+    $ brew install --HEAD jubatus --cc=clang --disable-onig --enable-zookeeper
 
 ## Requirement
 
 * OS version: 10.8 (Mountain Lion)
-    * 10.9 (Mavericks) is NOT supported due to c++ library issues.
+    * 10.9 (Mavericks) is currently NOT supported due to c++ library issues.
 * Compiler: clang
     * with env setting "export CXX=clang"
