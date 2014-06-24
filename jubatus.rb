@@ -38,23 +38,22 @@ class Jubatus < Formula
     exit 1
   end
 
-  url 'https://github.com/jubatus/jubatus/tarball/0.5.3'
+  url 'https://github.com/jubatus/jubatus/tarball/0.6.0'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  sha1 'cbc4f4ae8b0909faf8f89c5df337ad6e63010774'
-  version '0.5.3'
+  sha1 '60dddf2179b7d5e77aa8e791f1242fbe97d3aa06'
+  version '0.6.0'
 
-  option 'disable-onig', 'Disable oniguruma for regex'
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
   option 'enable-zookeeper', 'Enable ZooDeeper for distributed environemnt'
 
-  depends_on 'glog'
+  depends_on 'log4cxx'
   depends_on 'pkg-config'
+  depends_on 'jubatus-core'
   depends_on 'jubatus-msgpack-rpc'
 
   depends_on ZooKeeperRequirement.new if build.include? 'enable-zookeeper'
   depends_on 'mecab' if build.include? "enable-mecab"
-  depends_on 'oniguruma' unless build.include? "disable-onig"
   # snow leopard default gcc version is 4.2
   depends_on 'gcc' if build.include? 'snow-leopard'
 
@@ -74,7 +73,6 @@ class Jubatus < Formula
     STDERR.puts ENV['CC'], ENV['CXX']
     args = []
     args << "--prefix=#{prefix}"
-    args << "--disable-onig" if build.include? "disable-onig"
     args << "--enable-mecab" if build.include? "enable-mecab"
     args << "--enable-zookeeper" if build.include? "enable-zookeeper"
     system "./waf", "configure", *args
