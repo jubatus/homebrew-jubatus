@@ -16,6 +16,7 @@ class JubatusCore < Formula
   depends_on 'pkg-config'
 
   depends_on 'oniguruma' if @@regexp_library == 'oniguruma'
+  depends_on 're2' if @@regexp_library == 're2'
   # snow leopard default gcc version is 4.2
   depends_on 'gcc' if build.include? 'snow-leopard'
 
