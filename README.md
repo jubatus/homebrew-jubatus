@@ -12,7 +12,6 @@ A repository for Jubatus brews. This is experimental support.
 The following options are available:
 
 * --prefix=PATH: Installation path
-* --disable-onig: Disable oniguruma (regex library)
 * --enable-mecab: Enable mecab
 * --enable-zookeeper: Enable ZooKeeper (distributed mode)
 
