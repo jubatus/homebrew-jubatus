@@ -31,18 +31,11 @@ class ZooKeeperRequirement < Requirement
 end
 
 class Jubatus < Formula
-
-  # Mavericks is not supported
-  if MacOS.version >= "10.9"
-    onoe "Jubatus does not support Mavericks OSX 10.9 or later version"
-    exit 1
-  end
-
-  url 'https://github.com/jubatus/jubatus/tarball/0.6.0'
+  url 'https://github.com/jubatus/jubatus/tarball/0.6.1'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  sha1 '60dddf2179b7d5e77aa8e791f1242fbe97d3aa06'
-  version '0.6.0'
+  sha1 '0290fd10c67962aa044bc77eb8e091c6fc09f04f'
+  version '0.6.1'
 
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
   option 'enable-zookeeper', 'Enable ZooDeeper for distributed environemnt'
@@ -68,6 +61,10 @@ class Jubatus < Formula
         ENV['LD'] = bin+"/gcc-#{version}"
         ENV['CXX'] = bin+"/g++-#{version}"
       end
+    end
+
+    if MacOS.version >= "10.9"
+      ENV['CXXFLAGS'] = "-std=c++11 -DMP_FUNCTIONAL_STANDARD -DMP_MEMORY_STANDARD -DMP_UNORDERED_MAP_STANDARD"
     end
 
     STDERR.puts ENV['CC'], ENV['CXX']

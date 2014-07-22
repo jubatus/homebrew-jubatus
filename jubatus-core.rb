@@ -1,11 +1,11 @@
 require 'formula'
 
 class JubatusCore < Formula
-  url 'https://github.com/jubatus/jubatus_core/tarball/0.0.1'
+  url 'https://github.com/jubatus/jubatus_core/tarball/0.0.2'
   head 'https://github.com/jubatus/jubatus_core.git'
   homepage 'http://jubat.us/'
-  sha1 '74fd956f6e61fbf8de1f5aad4f8e8461c7e81e9f'
-  version '0.0.1'
+  sha1 'a7c60c05cfddb548420294cfbf9f1fa85434be31'
+  version '0.0.2'
 
   option 'regexp-library=', 'oniguruma (default), re2, or none'
   @@regexp_library = ARGV.value('regexp-library')
@@ -19,11 +19,6 @@ class JubatusCore < Formula
   depends_on 're2' if @@regexp_library == 're2'
   # snow leopard default gcc version is 4.2
   depends_on 'gcc' if build.include? 'snow-leopard'
-
-  patch do
-    url 'https://gist.githubusercontent.com/gwtnb/beb8abd33f99e6452e4c/raw/1144be89646a193a2061ad28015212d0a9c48b14/isinf.diff'
-    sha1 'd8755b2ff2437b61c23bce27c137236103f84c06'
-  end
 
   def install
     if MacOS.version >= "10.9"
