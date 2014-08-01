@@ -16,7 +16,8 @@ The following options are available:
 
 Example:
 
-    $ brew install jubatus --use-clang --disable-onig --enable-zookeeper
+    $ brew install jubatus-core --use-clang --regexp-library=re2
+    $ brew install jubatus --use-clang --enable-zookeeper
 
 ## Requirement
 
