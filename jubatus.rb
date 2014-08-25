@@ -31,11 +31,11 @@ class ZooKeeperRequirement < Requirement
 end
 
 class Jubatus < Formula
-  url 'https://github.com/jubatus/jubatus/tarball/0.6.1'
+  url 'https://github.com/jubatus/jubatus/tarball/0.6.2'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  sha1 '0290fd10c67962aa044bc77eb8e091c6fc09f04f'
-  version '0.6.1'
+  sha1 'db28f9eec062537f6ca6910ee461242d6deb641d'
+  version '0.6.2'
 
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
   option 'enable-zookeeper', 'Enable ZooDeeper for distributed environemnt'
