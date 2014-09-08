@@ -18,13 +18,13 @@ class ZooKeeperRequirement < Requirement
     return nil if satisfied?
     if @zk.installed?
       <<-EOS.undent
-        ZooKeeper build was requested, but Zookeeper was already built without `--c` option.
-        You will need to `brew uninstall zookeeper; brew install zookeeper --c` first.
+        ZooKeeper build was requested, but Zookeeper was already built without `--with-c` option.
+        You will need to `brew uninstall zookeeper; brew install zookeeper --with-c` first.
       EOS
     else
       <<-EOS.undent
         ZooKeeper build was requested, but Zookeeper is not installed.
-        You will need to `brew install zookeeper --c` first.
+        You will need to `brew install zookeeper --with-c` first.
       EOS
     end
   end
