@@ -14,6 +14,7 @@ class JubatusCore < Formula
   end
 
   depends_on 'pkg-config'
+  depends_on 'msgpack'
 
   depends_on 'oniguruma' if @@regexp_library == 'oniguruma'
   depends_on 're2' if @@regexp_library == 're2'
