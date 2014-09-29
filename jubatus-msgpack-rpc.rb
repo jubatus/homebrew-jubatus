@@ -1,11 +1,11 @@
 require 'formula'
 
 class JubatusMsgpackRpc < Formula
-  url 'http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.3.tar.gz'
+  url 'http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.4.tar.gz'
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
   homepage 'http://github.com/jubatus/jubatus-msgpack-rpc/'
-  sha1 '4471039dc4451e0feed428a2f10a616d7593fb88'
-  version '0.4.3'
+  sha1 'a62582b243dc3c232aa29335d3657ecc2944df3b'
+  version '0.4.4'
 
   depends_on 'msgpack'
   depends_on 'jubatus-mpio'

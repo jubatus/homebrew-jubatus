@@ -1,11 +1,11 @@
 require 'formula'
 
 class JubatusCore < Formula
-  url 'https://github.com/jubatus/jubatus_core/tarball/0.0.3'
+  url 'https://github.com/jubatus/jubatus_core/tarball/0.0.4'
   head 'https://github.com/jubatus/jubatus_core.git'
   homepage 'http://jubat.us/'
-  sha1 '0845acf1f24df6b0f57d4fca2b248c4344d67ac5'
-  version '0.0.3'
+  sha1 '400de7bc694a3eae24420c39390943a24caa2a28'
+  version '0.0.4'
 
   option 'regexp-library=', 'oniguruma (default), re2, or none'
   @@regexp_library = ARGV.value('regexp-library')
