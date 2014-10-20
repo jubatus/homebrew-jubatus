@@ -1,11 +1,11 @@
 require 'formula'
 
 class JubatusMpio < Formula
-  url 'http://download.jubat.us/files/source/jubatus_mpio/jubatus_mpio-0.4.4.tar.gz'
+  url 'http://download.jubat.us/files/source/jubatus_mpio/jubatus_mpio-0.4.5.tar.gz'
   head 'https://github.com/jubatus/jubatus-mpio.git'
   homepage 'https://github.com/jubatus/jubatus-mpio'
-  sha1 'ab52bcf3151b4c90e14f041f30b43ed6e6bddeec'
-  version '0.4.4'
+  sha1 'ad4e75bf612d18d710a44e3d1a94413abf33eeb7'
+  version '0.4.5'
 
   depends_on 'libtool'
 
