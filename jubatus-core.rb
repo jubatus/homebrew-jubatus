@@ -28,5 +28,34 @@ class JubatusCore < Formula
     system './waf', 'configure', "--prefix=#{prefix}", "--regexp-library=#{@@regexp_library}"
     system './waf'
     system './waf', 'install'
+
+    # waf versoin 1.6.4 is does not support OS X install_name option.
+    %w{
+      libjubatus_core
+      libjubatus_util
+      libjubatus_util_concurrent
+      libjubatus_util_data
+      libjubatus_util_lang
+      libjubatus_util_math
+      libjubatus_util_system
+      libjubatus_util_text
+    }.each do |f|
+      %w{
+        util/libjubatus_util
+        util/concurrent/libjubatus_util_concurrent
+        util/data/libjubatus_util_data
+        util/lang/libjubatus_util_lang
+        util/math/libjubatus_util_math
+        util/system/libjubatus_util_system
+        util/text/libjubatus_util_text
+      }.each do |l|
+        system "chmod", "644", "#{lib}/#{f}.#{version}.dylib"
+        system "install_name_tool", "-change",
+            "#{buildpath}/build/jubatus/#{l}.dylib",
+            "#{lib}/#{Pathname.new(l).basename}.dylib",
+            "#{lib}/#{f}.#{version}.dylib"
+        system "chmod", "444", "#{lib}/#{f}.#{version}.dylib"
+      end
+    end
   end
 end
