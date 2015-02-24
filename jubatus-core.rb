@@ -4,7 +4,7 @@ class JubatusCore < Formula
   url 'https://github.com/jubatus/jubatus_core/tarball/0.1.0'
   head 'https://github.com/jubatus/jubatus_core.git'
   homepage 'http://jubat.us/'
-  sha1 '4e0eea6d26d65170c1603702e35b0bfd364dd971'
+  sha1 '41d2b368eda648992a71345d02fda75ed09413c5'
   version '0.1.0'
 
   option 'regexp-library=', 'oniguruma (default), re2, or none'
