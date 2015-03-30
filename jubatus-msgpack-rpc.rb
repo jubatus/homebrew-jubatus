@@ -7,7 +7,7 @@ class JubatusMsgpackRpc < Formula
   sha1 'a62582b243dc3c232aa29335d3657ecc2944df3b'
   version '0.4.4'
 
-  depends_on 'msgpack'
+  depends_on 'msgpack059'
   depends_on 'jubatus-mpio'
   depends_on 'libtool'
 
