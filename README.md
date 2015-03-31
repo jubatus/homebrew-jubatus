@@ -2,6 +2,15 @@
 
 A repository for Jubatus brews. This is experimental support.
 
+## If you failed to install jubatus with Homebrew, try following command.
+
+```bash
+brew unlink msgpack
+```
+
+The above command unlinks latest msgpack-c (https://github.com/msgpack/msgpack-c/), which breaks jubatus.
+We will modify jubatus to use latest msgack-c, but use old msgpack-c for now.
+
 ## How to use
 
 	$ brew tap jubatus/jubatus
