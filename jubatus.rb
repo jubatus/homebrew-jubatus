@@ -18,12 +18,12 @@ class ZooKeeperRequirement < Requirement
     return nil if satisfied?
     if @zk.installed?
       <<-EOS.undent
-        ZooKeeper build was requested, but Zookeeper was already built without `--c` option.
+        ZooKeeper build was requested, but ZooKeeper was already built without `--c` option.
         You will need to `brew uninstall zookeeper; brew install zookeeper` first.
       EOS
     else
       <<-EOS.undent
-        ZooKeeper build was requested, but Zookeeper is not installed.
+        ZooKeeper build was requested, but ZooKeeper is not installed.
         You will need to `brew install zookeeper` first.
       EOS
     end
@@ -38,7 +38,7 @@ class Jubatus < Formula
   version '0.7.2'
 
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
-  option 'enable-zookeeper', 'Enable ZooDeeper for distributed environemnt'
+  option 'enable-zookeeper', 'Enable ZooKeeper for distributed environemnt'
 
   depends_on 'log4cxx'
   depends_on 'pkg-config'
