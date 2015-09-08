@@ -1,5 +1,3 @@
-require 'formula'
-
 class ZooKeeperRequirement < Requirement
   def initialize
     super

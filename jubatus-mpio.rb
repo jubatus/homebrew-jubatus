@@ -1,5 +1,3 @@
-require 'formula'
-
 class JubatusMpio < Formula
   url 'http://download.jubat.us/files/source/jubatus_mpio/jubatus_mpio-0.4.5.tar.gz'
   head 'https://github.com/jubatus/jubatus-mpio.git'

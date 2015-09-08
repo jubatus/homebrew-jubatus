@@ -1,5 +1,3 @@
-require 'formula'
-
 class JubatusCore < Formula
   url 'https://github.com/jubatus/jubatus_core/tarball/0.2.2'
   head 'https://github.com/jubatus/jubatus_core.git'

@@ -1,5 +1,3 @@
-require 'formula'
-
 class Msgpack059 < Formula
   url 'https://github.com/msgpack/msgpack-c/releases/download/cpp-0.5.9/msgpack-0.5.9.tar.gz'
   head 'https://github.com/msgpack/msgpack-c.git'

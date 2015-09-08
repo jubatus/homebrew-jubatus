@@ -1,5 +1,3 @@
-require 'formula'
-
 class JubatusMsgpackRpc < Formula
   url 'http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.4.tar.gz'
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
