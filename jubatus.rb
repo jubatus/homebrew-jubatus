@@ -53,13 +53,12 @@ class Jubatus < Formula
   def install
     if ENV.compiler == :gcc
       gcc = Formula.factory('gcc')
-      version = '4.7'
+      gcc_version = '4.7'
 
       if File.exist?(gcc.bin)
-        bin = gcc.bin.to_s
-        ENV['CC'] = bin+"/gcc-#{version}"
-        ENV['LD'] = bin+"/gcc-#{version}"
-        ENV['CXX'] = bin+"/g++-#{version}"
+        ENV['CC'] = "#{gcc.bin.to_s}/gcc-#{gcc_version}"
+        ENV['LD'] = "#{gcc.bin.to_s}/gcc-#{gcc_version}"
+        ENV['CXX'] ="#{gcc.bin.to_s}/g++-#{gcc_version}"
       end
     end
 
@@ -75,6 +74,56 @@ class Jubatus < Formula
     system "./waf", "configure", *args
     system "./waf", "build"
     system "./waf", "install"
+
+    # waf versoin 1.6.4 is does not support OS X install_name option.
+    %w{
+      libjubaserv_common
+      libjubaserv_common_mprpc
+      libjubaserv_framework
+      libjubaserv_fv_converter
+      libjubaserv_mixer
+    }.each do |f|
+      %w{
+        server/common/logger/libjubaserv_common_logger
+        server/common/libjubaserv_common
+        server/common/mprpc/libjubaserv_common_mprpc
+        server/framework/mixer/libjubaserv_mixer
+      }.each do |l|
+        system "chmod", "644", "#{lib}/#{f}.#{version}.dylib"
+        system "install_name_tool", "-change",
+            "#{buildpath}/build/jubatus/#{l}.dylib",
+            "#{lib}/#{Pathname.new(l).basename}.dylib",
+            "#{lib}/#{f}.#{version}.dylib"
+        system "chmod", "444", "#{lib}/#{f}.#{version}.dylib"
+      end
+    end
+
+    %w{
+      jubaanomaly
+      jubaburst
+      jubaclassifier
+      jubaclustering
+      jubaconv
+      jubagraph
+      jubanearest_neighbor
+      jubarecommender
+      jubaregression
+      jubastat
+    }.each do |f|
+      %w{
+        server/framework/libjubaserv_framework
+        server/framework/mixer/libjubaserv_mixer
+        server/common/logger/libjubaserv_common_logger
+        server/common/libjubaserv_common
+        server/common/mprpc/libjubaserv_common_mprpc
+        server/fv_converter/libjubaserv_fv_converter
+      }.each do |l|
+        system "install_name_tool", "-change",
+            "#{buildpath}/build/jubatus/#{l}.dylib",
+            "#{lib}/#{Pathname.new(l).basename}.dylib",
+            "#{bin}/#{f}"
+      end
+    end
   end
 
   def test
