@@ -39,7 +39,7 @@ class Jubatus < Formula
   option 'enable-zookeeper', 'Enable ZooKeeper for distributed environemnt'
 
   depends_on 'log4cxx'
-  depends_on 'pkg-config'
+  depends_on 'pkg-config' => :build
   depends_on 'jubatus-core'
   depends_on 'jubatus-msgpack-rpc'
 

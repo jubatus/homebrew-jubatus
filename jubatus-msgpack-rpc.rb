@@ -7,7 +7,7 @@ class JubatusMsgpackRpc < Formula
 
   depends_on 'msgpack059'
   depends_on 'jubatus-mpio'
-  depends_on 'libtool'
+  depends_on 'libtool' => :build
 
   def install
     if MacOS.version >= :mavericks

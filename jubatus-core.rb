@@ -11,7 +11,7 @@ class JubatusCore < Formula
     @@regexp_library = 'oniguruma'
   end
 
-  depends_on 'pkg-config'
+  depends_on 'pkg-config' => :build
   depends_on 'msgpack059'
 
   depends_on 'oniguruma' if @@regexp_library == 'oniguruma'

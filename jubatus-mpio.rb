@@ -5,7 +5,7 @@ class JubatusMpio < Formula
   sha1 'ad4e75bf612d18d710a44e3d1a94413abf33eeb7'
   version '0.4.5'
 
-  depends_on 'libtool'
+  depends_on 'libtool' => :build
 
   def install
     if MacOS.version >= :mavericks
