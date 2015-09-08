@@ -20,7 +20,7 @@ class JubatusCore < Formula
   depends_on 'gcc' if build.include? 'snow-leopard'
 
   def install
-    if MacOS.version >= "10.9"
+    if MacOS.version >= :mavericks
       ENV['CXXFLAGS'] = '-std=c++11'
     end
     system './waf', 'configure', "--prefix=#{prefix}", "--regexp-library=#{@@regexp_library}"
