@@ -1,7 +1,7 @@
 class ZooKeeperRequirement < Requirement
   def initialize
     super
-    @zk = Formula.factory('zookeeper')
+    @zk = Formula['zookeeper']
   end
 
   def fatal?
@@ -50,7 +50,7 @@ class Jubatus < Formula
 
   def install
     if ENV.compiler == :gcc
-      gcc = Formula.factory('gcc')
+      gcc = Formula['gcc']
       version = '4.7'
 
       if File.exist?(gcc.bin)
