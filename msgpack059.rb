@@ -5,6 +5,8 @@ class Msgpack059 < Formula
   sha1 '6efcd01f30b3b6a816887e3c543c8eba6dcfcb25'
   version '0.5.9'
 
+  keg_only 'Conflicts with msgpack in main repository.'
+
   def install
     system './configure', "--prefix=#{prefix}"
     system 'make'
