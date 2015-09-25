@@ -1,5 +1,3 @@
-require 'formula'
-
 class JubatusMpio < Formula
   url 'http://download.jubat.us/files/source/jubatus_mpio/jubatus_mpio-0.4.5.tar.gz'
   head 'https://github.com/jubatus/jubatus-mpio.git'
@@ -7,10 +5,10 @@ class JubatusMpio < Formula
   sha1 'ad4e75bf612d18d710a44e3d1a94413abf33eeb7'
   version '0.4.5'
 
-  depends_on 'libtool'
+  depends_on 'libtool' => :build
 
   def install
-    if MacOS.version >= "10.9"
+    if MacOS.version >= :mavericks
       ENV['CXXFLAGS'] = '-std=c++11 -DMP_FUNCTIONAL_STANDARD -DMP_MEMORY_STANDARD -DMP_UNORDERED_MAP_STANDARD'
     end
     system "./configure", "--prefix=#{prefix}"

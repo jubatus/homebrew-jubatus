@@ -1,9 +1,7 @@
-require 'formula'
-
 class ZooKeeperRequirement < Requirement
   def initialize
     super
-    @zk = Formula.factory('zookeeper')
+    @zk = Formula['zookeeper']
   end
 
   def fatal?
@@ -41,7 +39,7 @@ class Jubatus < Formula
   option 'enable-zookeeper', 'Enable ZooKeeper for distributed environemnt'
 
   depends_on 'log4cxx'
-  depends_on 'pkg-config'
+  depends_on 'pkg-config' => :build
   depends_on 'jubatus-core'
   depends_on 'jubatus-msgpack-rpc'
 
@@ -52,7 +50,7 @@ class Jubatus < Formula
 
   def install
     if ENV.compiler == :gcc
-      gcc = Formula.factory('gcc')
+      gcc = Formula['gcc']
       version = '4.7'
 
       if File.exist?(gcc.bin)
@@ -63,7 +61,7 @@ class Jubatus < Formula
       end
     end
 
-    if MacOS.version >= "10.9"
+    if MacOS.version >= :mavericks
       ENV['CXXFLAGS'] = "-std=c++11 -DMP_FUNCTIONAL_STANDARD -DMP_MEMORY_STANDARD -DMP_UNORDERED_MAP_STANDARD"
     end
 

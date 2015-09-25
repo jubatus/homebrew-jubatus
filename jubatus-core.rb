@@ -1,5 +1,3 @@
-require 'formula'
-
 class JubatusCore < Formula
   url 'https://github.com/jubatus/jubatus_core/tarball/0.2.2'
   head 'https://github.com/jubatus/jubatus_core.git'
@@ -13,7 +11,7 @@ class JubatusCore < Formula
     @@regexp_library = 'oniguruma'
   end
 
-  depends_on 'pkg-config'
+  depends_on 'pkg-config' => :build
   depends_on 'msgpack059'
 
   depends_on 'oniguruma' if @@regexp_library == 'oniguruma'
@@ -22,7 +20,7 @@ class JubatusCore < Formula
   depends_on 'gcc' if build.include? 'snow-leopard'
 
   def install
-    if MacOS.version >= "10.9"
+    if MacOS.version >= :mavericks
       ENV['CXXFLAGS'] = '-std=c++11'
     end
     system './waf', 'configure', "--prefix=#{prefix}", "--regexp-library=#{@@regexp_library}"

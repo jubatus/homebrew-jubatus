@@ -1,5 +1,3 @@
-require 'formula'
-
 class JubatusMsgpackRpc < Formula
   url 'http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.4.tar.gz'
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
@@ -9,10 +7,10 @@ class JubatusMsgpackRpc < Formula
 
   depends_on 'msgpack059'
   depends_on 'jubatus-mpio'
-  depends_on 'libtool'
+  depends_on 'libtool' => :build
 
   def install
-    if MacOS.version >= "10.9"
+    if MacOS.version >= :mavericks
       ENV['CXXFLAGS'] = '-std=c++11 -DMP_FUNCTIONAL_STANDARD -DMP_MEMORY_STANDARD -DMP_UNORDERED_MAP_STANDARD'
     end
     system "./configure", "--prefix=#{prefix}"
