@@ -32,7 +32,7 @@ class Jubatus < Formula
   url 'https://github.com/jubatus/jubatus/tarball/0.8.8'
   head 'https://github.com/jubatus/jubatus.git'
   homepage 'http://jubat.us/'
-  sha1 '088c45e221aed19c87496cb2a0bc6da313d1100e'
+  sha1 '03234a365ff716b4285085f6c59822e145c9e2b6'
   version '0.8.8'
 
   option 'enable-mecab', 'Enable mecab for Japanese NLP'
