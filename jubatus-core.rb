@@ -2,7 +2,7 @@ class JubatusCore < Formula
   url 'https://github.com/jubatus/jubatus_core/tarball/0.2.8'
   head 'https://github.com/jubatus/jubatus_core.git'
   homepage 'http://jubat.us/'
-  sha1 '031af0cdff9348d3aa46321a21e02121f7f2f3e0'
+  sha1 '6558173e289d514f47bc5dfb29b2e20b04a7f546'
   version '0.2.8'
 
   option 'regexp-library=', 'oniguruma (default), re2, or none'
