@@ -2,7 +2,7 @@ class JubatusMpio < Formula
   url 'http://download.jubat.us/files/source/jubatus_mpio/jubatus_mpio-0.4.5.tar.gz'
   head 'https://github.com/jubatus/jubatus-mpio.git'
   homepage 'https://github.com/jubatus/jubatus-mpio'
-  sha1 'ad4e75bf612d18d710a44e3d1a94413abf33eeb7'
+  sha256 'bc51d7c92fe6500d94d5c7be3b4b2757a37553da4247d59edc41d4abe1fdc979'
   version '0.4.5'
 
   depends_on 'libtool' => :build

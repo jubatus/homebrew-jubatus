@@ -2,7 +2,7 @@ class JubatusMsgpackRpc < Formula
   url 'http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.4.tar.gz'
   head 'https://github.com/jubatus/jubatus-msgpack-rpc.git'
   homepage 'http://github.com/jubatus/jubatus-msgpack-rpc/'
-  sha1 'a62582b243dc3c232aa29335d3657ecc2944df3b'
+  sha256 'b454fda0261a5aa9b34ef78902a7c0215e3d317501507f27613b4ff9973aac60'
   version '0.4.4'
 
   depends_on 'msgpack059'
