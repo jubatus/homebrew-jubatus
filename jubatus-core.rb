@@ -1,9 +1,9 @@
 class JubatusCore < Formula
-  url 'https://github.com/jubatus/jubatus_core/archive/1.0.8.tar.gz'
+  url 'https://github.com/jubatus/jubatus_core/archive/1.0.9.tar.gz'
   head 'https://github.com/jubatus/jubatus_core.git'
   homepage 'http://jubat.us/'
-  sha256 'd39ca430e08a246b44315b49e0b28e4c4b6e8140055484764b39ad291c478eda'
-  version '1.0.8'
+  sha256 '9e8ded9c883e7b3959cb244a0367b05fc8a369913f8751cd8d79df1e95fabb14'
+  version '1.0.9'
 
   option 'regexp-library=', 'oniguruma (default), re2, or none'
   @@regexp_library = ARGV.value('regexp-library')
