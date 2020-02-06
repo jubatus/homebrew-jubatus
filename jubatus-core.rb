@@ -10,6 +10,7 @@ class JubatusCore < Formula
   if @@regexp_library.nil?
     @@regexp_library = 'oniguruma'
   end
+  option 'without-fmv', 'Disable optimization using function multiversioning'
 
   depends_on 'pkg-config' => :build
   depends_on 'msgpack059'
@@ -23,7 +24,9 @@ class JubatusCore < Formula
     if MacOS.version >= :mavericks
       ENV['CXXFLAGS'] = '-std=c++11'
     end
-    system './waf', 'configure', "--prefix=#{prefix}", "--regexp-library=#{@@regexp_library}"
+    args = []
+    args << '--disable-fmv' if build.without? "fmv"
+    system './waf', 'configure', "--prefix=#{prefix}", "--regexp-library=#{@@regexp_library}", *args
     system './waf'
     system './waf', 'install'
   end

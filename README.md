@@ -16,12 +16,15 @@ We will modify jubatus to use latest msgack-c, but use old msgpack-c for now.
 	$ brew tap jubatus/jubatus
 	$ brew install jubatus --use-clang
 
+On Catalina, Please specify option `--without-fmv`.
+
 ## Configure Options
 
 The following options are available:
 
 * --enable-mecab: Enable mecab
 * --enable-zookeeper: Enable ZooKeeper (distributed mode)
+* --without-fmv: Disable optimization using function multiversioning
 
 Example:
 
